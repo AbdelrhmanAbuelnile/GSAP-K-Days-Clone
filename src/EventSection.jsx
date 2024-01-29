@@ -24,8 +24,8 @@ function EventSection() {
 				className="w-full flex justify-center lg:justify-start items-center gap-4 text-[4vw] font-bold justify-self-start cursor-default leading-none"
 			>
 				<h1 className="text-[#E50695] leading-none">02/15</h1>
-				<p className="text-[#C6D800]">
-					Hello, World!
+				<p className="text-[#C6D800] flex just items-center gap-1">
+					<span className="mr-4">Hello, World!</span>
 					<span className="text-white text-[2.75vw] leading-none">python</span>
 				</p>
 				{showCursorImg === 1 && <CursorImg eventImg={event1} />}
@@ -40,7 +40,7 @@ function EventSection() {
 			>
 				<h1 className="text-[#E50695] leading-none">02/16</h1>
 				<p className="text-[#C6D800]">
-					React science Street
+					<span className="mr-4">React science Street</span>
 					<span className="text-white text-[2.75vw] leading-none">
 						Chad The Man
 					</span>
@@ -56,7 +56,7 @@ function EventSection() {
 			>
 				<h1 className="text-[#E50695] leading-none">02/17</h1>
 				<p className="text-[#C6D800]">
-					Vue lovers meet up
+					<span className="mr-4">Vue lovers meet up</span>
 					<span className="text-white text-[2.75vw] leading-none">
 						Evan You
 					</span>
@@ -72,7 +72,7 @@ function EventSection() {
 			>
 				<h1 className="text-[#E50695] leading-none">02/18</h1>
 				<p className="text-[#C6D800]">
-					Elctron is the future
+					<span className="mr-4">Elctron is the future</span>
 					<span className="text-white text-[2.75vw] leading-none">Github</span>
 				</p>
 				{showCursorImg == 4 && <CursorImg eventImg={event4} />}
@@ -86,7 +86,7 @@ function EventSection() {
 			>
 				<h1 className="text-[#E50695] leading-none">02/19</h1>
 				<p className="text-[#C6D800]">
-					Next.js is awesome
+					<span className="mr-4">Next.js is awesome</span>
 					<span className="text-white text-[2.75vw] leading-none">Vercel</span>
 				</p>
 				{showCursorImg == 5 && <CursorImg eventImg={event5} />}
@@ -100,7 +100,7 @@ function EventSection() {
 			>
 				<h1 className="text-[#E50695] leading-none">02/20</h1>
 				<p className="text-[#C6D800]">
-					Azure is the best
+					<span className="mr-4">Azure is the best</span>
 					<span className="text-white text-[2.75vw] leading-none">
 						Amazon Enjoyer PRO
 					</span>
