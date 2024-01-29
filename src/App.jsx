@@ -1,12 +1,57 @@
 import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { SplitText } from "gsap-trial/SplitText";
+import SplitType from "split-type";
 import Lenis from "@studio-freight/lenis";
 import EventSection from "./EventSection";
 import event1 from "./assets/event1.jpeg";
+import event2 from "./assets/event2.avif";
+import event3 from "./assets/event3.avif";
+import event4 from "./assets/event4.avif";
+import event5 from "./assets/event5.jpeg";
+import event6 from "./assets/event6.avif";
 
 function App() {
+
+	const events = [
+		{
+			date: "02/15",
+			title: "Hello, World!",
+			speaker: "python",
+			eventImg: event1,
+		},
+		{
+			date: "02/16",
+			title: "React science Street",
+			speaker: "Chad The Man",
+			eventImg: event2,
+		},
+		{
+			date: "02/17",
+			title: "Vue lovers meet up",
+			speaker: "Evan You",
+			eventImg: event3,
+		},
+		{
+			date: "02/18",
+			title: "Elctron is the future",
+			speaker: "Github",
+			eventImg: event4,
+		},
+		{
+			date: "02/19",
+			title: "Next.js is awesome",
+			speaker: "Vercel",
+			eventImg: event5,
+		},
+		{
+			date: "02/20",
+			title: "Azure is the best",
+			speaker: "Amazon Enjoyer PRO",
+			eventImg: event6,
+		},
+	];
+
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
@@ -40,10 +85,10 @@ function App() {
 	requestAnimationFrame(raf);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger, SplitText);
+		gsap.registerPlugin(ScrollTrigger);
 
-		let splited = new SplitText(".firstSplit", { type: "chars" });
-		let splited2 = new SplitText(".secondSplit", { type: "chars" });
+		let splited = new SplitType(".firstSplit", { type: "chars" });
+		let splited2 = new SplitType(".secondSplit", { type: "chars" });
 		let chars = splited.chars;
 		let chars2 = splited2.chars;
 
@@ -86,8 +131,8 @@ function App() {
 	}, []);
 
 	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger, SplitText);
-		let splited = new SplitText(".thirdSplit", { type: "chars, lines" });
+		gsap.registerPlugin(ScrollTrigger);
+		let splited = new SplitType(".thirdSplit", { type: "chars, lines" });
 		let chars = splited.chars;
 
 		gsap.from(chars, {
@@ -135,7 +180,11 @@ function App() {
 						</p>
 					</div>
 				</div>
-				<EventSection />
+				<div className="my-72 w-full flex flex-col justify-center items-start gap-10 self-start">
+					{events.map( (event, index) => (
+						<EventSection event={event} index={index} key={index}  />
+					))}
+				</div>
 			</div>
 		</>
 	);
